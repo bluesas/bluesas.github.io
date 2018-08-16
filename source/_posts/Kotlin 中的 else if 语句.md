@@ -11,12 +11,12 @@ tags:
 
 {% codeblock 示例代码 lang:Kotlin %}
 if (input == -1) {
-    "A"
+    res("A")
 } else if (input == -2) {
-    "B"
+    res("A")
 } else {
-    "C"
-}?.let {it: //当 input == -1 时，输出什么
+    res("A")
+}.let {
     println(it)
 }
 {% endcodeblock %}
@@ -32,16 +32,18 @@ if (input == -1) {
 我们看下上面那段 Kotlin 代码编译后生成的 .class 文件的反编译结果：
 
 {% codeblock 反编译 .class 文件 lang:java %}
-if (input != -1) {
-    String var6 = input == -2 ? "B" : "C";
+if (input == -1) {
+    this.res("A");
+} else {
+    String var6 = input == -2 ? this.res("A") : this.res("A");
     System.out.println(var6);
 }
 {% endcodeblock %}
 
-发现 input == -1 的分支没有了。
-
 这说明 **Kotlin 不支持 else if** 的写法。
-
+
+## 原因
+
 {% codeblock else if 示例 lang:Kotlin %}
 if (...) {
     ...
@@ -51,7 +53,9 @@ if (...) {
     ...
 }
 {% endcodeblock %}
+
 上面的代码会被解析为：
+
 {% codeblock else if 示例 lang:Kotlin %}
 if (...) {
     ...
@@ -63,8 +67,6 @@ if (...) {
     }
 }
 {% endcodeblock %}
-
-## 原因
 
 我们前面的示例代码实际上会被解释为：
 {% codeblock 示例代码 lang:Kotlin %}
