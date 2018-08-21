@@ -8,7 +8,7 @@ tags:
 ## 问题
 
 来看下面的代码块
-
+<!-- more -->
 {% codeblock 示例代码 lang:Kotlin %}
 if (input == -1) {
     res("A")
