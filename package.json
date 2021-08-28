@@ -6,6 +6,7 @@
   "author": "Wei Runqi <runqi.wei@dianping.com>",
   "license": "MIT",
   "devDependencies": {
+    "@vuepress/theme-blog": "^2.3.3",
     "vuepress": "^1.8.2"
   },
   "scripts": {
