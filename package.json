@@ -1,0 +1,15 @@
+{
+  "name": "bluesas.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:bluesas/bluesas.github.io.git",
+  "author": "Wei Runqi <runqi.wei@dianping.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
