@@ -9,10 +9,6 @@ module.exports = {
   description: 'Study, work, thinking',
   themeConfig: {
     logo: '/assets/favicon.jpg',
-    nav: [
-      { text: 'App', link: '/android/app/' },
-      { text: 'OS', link: '/android/os/' }
-    ],
     sidebar: 'auto'
   },
   markdown: {
